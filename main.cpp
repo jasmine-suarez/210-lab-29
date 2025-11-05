@@ -12,6 +12,9 @@ using namespace std;
 
 // Define a function to simulate one time period (hour) of changes
     // Parameters: map of gates, number of intervals
+void simulate_time_period(map<string, array<list<string>, 3>> airportMap, int hour) {
+    cout << "\n --- HOUR " << hour << " ---" << endl;
+}
 
 int main() {
     // Initialize a map to store gate info, each associated with an array of lists
@@ -38,6 +41,9 @@ int main() {
             cout << flight << " ";
         cout << endl;
     }
+
+    // TEST, SIMULATE 1 TIME PERIOD
+    simulate_time_period(airportMap, 1);
 
     // Begin a time-based simulation for flight changes
         // For 25 time intervals
