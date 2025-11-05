@@ -9,3 +9,6 @@ name as its key. The map's value will be an array of three std::lists representi
 flights, departing flights, and delayed flights.
 
 Simulated Events:
+The simulation will focus on three events: flights arrive (new flights are added to the "arrivals"
+list), flights depart (flights move from "arrivals" to "departures"), and flight delay (adding
+or removing from "delays"),
