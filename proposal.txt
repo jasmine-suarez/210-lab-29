@@ -1,7 +1,11 @@
 Project Overview:
-
+My project simulates airport flight activity over time. The simulations shows how flights
+arrive, depart, and encounter delays at multiple airport gates over 25 time periods (hours).
+The program will demonstrate how flight statuses change as time passes.
 
 Implementation:
-
+I plan to use a std::map to store data for each airport gate. The map will have the gate
+name as its key. The map's value will be an array of three std::lists representing arriving
+flights, departing flights, and delayed flights.
 
 Simulated Events:
