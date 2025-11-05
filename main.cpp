@@ -13,7 +13,22 @@ using namespace std;
 // Define a function to simulate one time period (hour) of changes
     // Parameters: map of gates, number of intervals
 void simulate_time_period(map<string, array<list<string>, 3>> airportMap, int hour) {
+    string gateName;
     cout << "\n --- HOUR " << hour << " ---" << endl;
+
+    // iterate through gates
+    for (auto gatePair : airportMap) {
+        gateName = gatePair.first;
+        auto flightLists = gatePair.second;
+    }
+
+    // TEST, CHANGE ARRIVING FLIGHT TO DEPARTING
+    if (!flightLists[0].empty()) {
+        string flight = flightLists[0].front();
+        flightLists[0].pop_front();         // remove from arrivals
+        flightLists[1].push_back(flight);   // add to departures
+        cout << "Flight " << flight << " moved from arrivals to departures at " << gateName << endl;
+    }
 }
 
 int main() {
