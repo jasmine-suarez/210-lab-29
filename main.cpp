@@ -19,7 +19,7 @@ int main() {
     map<string, array<list<string>, 3>> airportMap;
 
     // TEST, DUMMY GATE AND FLIGHT
-    airportMap["Gate A1"]
+    airportMap["Gate A1"][0].push_back("AA123"); // [0] = arrivals list
 
     // Open an external file to read initial flight data and populate the map
         // If file doesn't open, print error and exit
@@ -31,6 +31,13 @@ int main() {
     // Close the file
 
     // Display the initial state of all gates and flights
+    cout << "=== INITIAL AIRPORT STATUS ===" << endl;
+    for (auto gatePair : airportMap) {
+        cout << gatePair.first << ": ";
+        for (auto flight : gatePair.second[0])
+            cout << flight << " ";
+        cout << endl;
+    }
 
     // Begin a time-based simulation for flight changes
         // For 25 time intervals
