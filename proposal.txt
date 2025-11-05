@@ -8,6 +8,9 @@ I plan to use a std::map to store data for each airport gate. The map will have 
 name as its key. The map's value will be an array of three std::lists representing arriving
 flights, departing flights, and delayed flights.
 
+The external file will contain the flight schedule data, such as the gate name, flight number,
+and flight status (arrival, departure, delay).
+
 Simulated Events:
 The simulation will focus on three events: flights arrive (new flights are added to the "arrivals"
 list), flights depart (flights move from "arrivals" to "departures"), and flight delay (adding
