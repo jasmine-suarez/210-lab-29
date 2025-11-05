@@ -12,22 +12,21 @@ using namespace std;
 
 // Define a function to simulate one time period (hour) of changes
     // Parameters: map of gates, number of intervals
-void simulate_time_period(map<string, array<list<string>, 3>> airportMap, int hour) {
-    string gateName;
+void simulate_time_period(map<string, array<list<string>, 3>> &airportMap, int hour) {
     cout << "\n --- HOUR " << hour << " ---" << endl;
 
     // iterate through gates
-    for (auto gatePair : airportMap) {
-        gateName = gatePair.first;
-        auto flightLists = gatePair.second;
-    }
+    for (auto &gatePair : airportMap) {
+        string gateName = gatePair.first;
+        auto &flightLists = gatePair.second;
 
-    // TEST, CHANGE ARRIVING FLIGHT TO DEPARTING
-    if (!flightLists[0].empty()) {
-        string flight = flightLists[0].front();
-        flightLists[0].pop_front();         // remove from arrivals
-        flightLists[1].push_back(flight);   // add to departures
-        cout << "Flight " << flight << " moved from arrivals to departures at " << gateName << endl;
+        // TEST, CHANGE ARRIVING FLIGHT TO DEPARTING
+        if (!flightLists[0].empty()) {
+            string flight = flightLists[0].front();
+            flightLists[0].pop_front();         // remove from arrivals
+            flightLists[1].push_back(flight);   // add to departures
+            cout << "Flight " << flight << " moved from arrivals to departures at " << gateName << endl;
+        }
     }
 }
 
@@ -50,9 +49,9 @@ int main() {
 
     // Display the initial state of all gates and flights
     cout << "=== INITIAL AIRPORT STATUS ===" << endl;
-    for (auto gatePair : airportMap) {
+    for (auto &gatePair : airportMap) {
         cout << gatePair.first << ": ";
-        for (auto flight : gatePair.second[0])
+        for (auto &flight : gatePair.second[0])
             cout << flight << " ";
         cout << endl;
     }
