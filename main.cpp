@@ -2,12 +2,12 @@
 // IDE used: VS Code
 
 #include <iostream>
-#include <fstream>
+// #include <fstream>
 #include <map>
 #include <array>
 #include <list>
-#include <cstdlib>
-#include <ctime>
+// #include <cstdlib>
+// #include <ctime>
 using namespace std;
 
 // Define a function to simulate one time period (hour) of changes
@@ -16,6 +16,10 @@ using namespace std;
 int main() {
     // Initialize a map to store gate info, each associated with an array of lists
     // for arrivals, departures, and delays
+    map<string, array<list<string>, 3>> airportMap;
+
+    // TEST, DUMMY GATE AND FLIGHT
+    airportMap["Gate A1"]
 
     // Open an external file to read initial flight data and populate the map
         // If file doesn't open, print error and exit
