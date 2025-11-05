@@ -21,6 +21,26 @@ int main() {
         // If file doesn't open, print error and exit
 
     // Read data from file and populate map
+        // For each line, extract gate, flight number, and status
+        // Insert flight into list in the array for that gate
+
+    // Close the file
+
+    // Display the initial state of all gates and flights
+
+    // Begin a time-based simulation for flight changes
+        // For 25 time intervals
+            // Iterate through each gate in the map
+                // For each gate, simulate flight events
+                    // Randomly decide which flights move between arrivals, departures, and delays
+                        // If a flight departs, remove from arrivals
+                        // If a flight is delayed, move from departures to delayed
+                        // If a delayed flight departs, remove from delayed and add to departures
+                    // Print the changes for this interval
+
+            // Pause briefly to simulate time between intervals
+        
+    // Display the final state of all gates and flights
 
     return 0;
 }
