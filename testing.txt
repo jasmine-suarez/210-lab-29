@@ -7,6 +7,5 @@ Description:
 The function is supposed to simulate the changes during each hour interval. A unit test
 will test: for each gate in the map, the function checks the list of arrivals (0), if 
 there is an arrival flight, the functions moves the front arrival flight to the list 
-of departures (1), and if the arrivals list is empty, there are no changes. Also, unit
-test will make sure flights in the departure list is removed (left airport), delayed
+of departures (1), flights in the departure list is removed (left airport), delayed
 flights move back to departures, and new flights arriving.
