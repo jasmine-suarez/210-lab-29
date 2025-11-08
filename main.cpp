@@ -75,10 +75,18 @@ int main() {
     // Display the initial state of all gates and flights
     cout << "=== INITIAL AIRPORT STATUS ===" << endl;
     for (auto &gatePair : airportMap) {
-        cout << gatePair.first << ": ";
+        cout << gatePair.first << ": \n";
 
-        cout <<
+        cout << "    Arrivals: ";
         for (auto &flight : gatePair.second[0])
+            cout << flight << " ";
+
+        cout << "\n    Departures: ";
+        for (auto &flight : gatePair.second[1])
+            cout << flight << " ";
+
+        cout << "\n    Delayed: ";
+        for (auto &flight : gatePair.second[2])
             cout << flight << " ";
         cout << endl;
     }
@@ -95,10 +103,30 @@ int main() {
                         // If a flight is delayed, move from departures to delayed
                         // If a delayed flight departs, remove from delayed and add to departures
                     // Print the changes for this interval
+    for (int hour = 1; hour <= 25; hour++) {
+        simulate_time_period(airportMap, hour);
+    }
 
             // Pause briefly to simulate time between intervals
         
     // Display the final state of all gates and flights
+    cout << "\n=== FINAL AIRPORT STATUS ===" << endl;
+    for (auto &gatePair : airportMap) {
+        cout << gatePair.first << ": \n";
+
+        cout << "    Arrivals: ";
+        for (auto &flight : gatePair.second[0])
+            cout << flight << " ";
+
+        cout << "\n    Departures: ";
+        for (auto &flight : gatePair.second[1])
+            cout << flight << " ";
+
+        cout << "\n    Delayed: ";
+        for (auto &flight : gatePair.second[2])
+            cout << flight << " ";
+        cout << endl;
+    }
 
     return 0;
 }
