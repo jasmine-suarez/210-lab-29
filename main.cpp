@@ -37,6 +37,8 @@ int main() {
 
     // TEST, DUMMY GATE AND FLIGHT
     airportMap["Gate A1"][0].push_back("AA123"); // [0] = arrivals list
+    airportMap["Gate A1"][0].push_back("AA123");
+    airportMap["Gate A1"][0].push_back("AA123");
 
     // Open an external file to read initial flight data and populate the map
         // If file doesn't open, print error and exit
