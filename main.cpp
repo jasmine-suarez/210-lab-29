@@ -2,13 +2,13 @@
 // IDE used: VS Code
 
 #include <iostream>
-// #include <fstream>
+#include <fstream>
 #include <map>
 #include <array>
 #include <list>
 #include <cstdlib>
 #include <ctime>
-// using namespace std;
+using namespace std;
 
 // Define a function to simulate one time period (hour) of changes
     // Parameters: map of gates, number of intervals
@@ -29,7 +29,6 @@ int main() {
     airportMap["Gate B2"][1].push_back("BB102"); // [1] = departures list
     airportMap["Gate B2"][2].push_back("BB103"); // [2] = delays list
 
-    /*
     // Open an external file to read initial flight data and populate the map
         // If file doesn't open, print error and exit
     ifstream fin;
@@ -55,7 +54,6 @@ int main() {
     }
     // Close the file
     fin.close();
-    */
 
     // Display the initial state of all gates and flights
     cout << "=== INITIAL AIRPORT STATUS ===" << endl;
@@ -126,9 +124,6 @@ void simulate_time_period(map<string, array<list<string>, 3>> &airportMap, int h
         string gateName = gatePair.first;
         auto &flightLists = gatePair.second;
 
-        // 50% CAHNCE TO ADD A NEW FLIGHT TO ARRIVALS LIST
-
-
         // TEST, CHANGE ARRIVING FLIGHT TO DEPARTING
         if (!flightLists[0].empty()) {
             string flight = flightLists[0].front();
@@ -137,6 +132,9 @@ void simulate_time_period(map<string, array<list<string>, 3>> &airportMap, int h
             cout << "Flight " << flight << " moved from arrivals to departures at " << gateName << endl;
         }
 
-        
+        // 25% CHANCE THAT A DEPARTURE WILL BE DELAYED
+
+
+        // 50% CHANCE THAT A DELAYED FLIGHT WILL BE CLEARED FOR DEPARTURE
     }
 }
