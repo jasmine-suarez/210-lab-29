@@ -20,6 +20,7 @@ int main() {
     // for arrivals, departures, and delays
     map<string, array<list<string>, 3>> airportMap;
 
+    /*
     // TEST, DUMMY GATE AND FLIGHT
     airportMap["Gate A1"][0].push_back("AA123"); // [0] = arrivals list
     airportMap["Gate A1"][1].push_back("AA124"); // [1] = departures list
@@ -28,6 +29,7 @@ int main() {
     airportMap["Gate B2"][0].push_back("BB101"); // [0] = arrivals list
     airportMap["Gate B2"][1].push_back("BB102"); // [1] = departures list
     airportMap["Gate B2"][2].push_back("BB103"); // [2] = delays list
+    */
 
     // Open an external file to read initial flight data and populate the map
         // If file doesn't open, print error and exit
@@ -74,9 +76,6 @@ int main() {
         cout << endl;
     }
 
-    // TEST, SIMULATE 1 TIME PERIOD
-    simulate_time_period(airportMap, 1);
-
     // Begin a time-based simulation for flight changes
         // For 25 time intervals
             // Iterate through each gate in the map
@@ -86,11 +85,8 @@ int main() {
                         // If a flight is delayed, move from departures to delayed
                         // If a delayed flight departs, remove from delayed and add to departures
                     // Print the changes for this interval
-    for (int hour = 1; hour <= 25; hour++) {
+    for (int hour = 1; hour <= 25; hour++)
         simulate_time_period(airportMap, hour);
-    }
-
-            // Pause briefly to simulate time between intervals
         
     // Display the final state of all gates and flights
     cout << "\n=== FINAL AIRPORT STATUS ===" << endl;
@@ -133,7 +129,7 @@ void simulate_time_period(map<string, array<list<string>, 3>> &airportMap, int h
         }
 
         // 25% CHANCE THAT A DEPARTURE WILL BE DELAYED
-
+        if (!flightLists[])
 
         // 50% CHANCE THAT A DELAYED FLIGHT WILL BE CLEARED FOR DEPARTURE
     }
