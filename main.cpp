@@ -2,7 +2,7 @@
 // IDE used: VS Code
 
 #include <iostream>
-#include <fstream>
+// #include <fstream>
 #include <map>
 #include <array>
 #include <list>
@@ -37,9 +37,14 @@ int main() {
 
     // TEST, DUMMY GATE AND FLIGHT
     airportMap["Gate A1"][0].push_back("AA123"); // [0] = arrivals list
-    airportMap["Gate A1"][0].push_back("AA123");
-    airportMap["Gate A1"][0].push_back("AA123");
+    airportMap["Gate A1"][1].push_back("AA124"); // [1] = departures list
+    airportMap["Gate A1"][2].push_back("AA125"); // [2] = delays list
 
+    airportMap["Gate B2"][0].push_back("BB101"); // [0] = arrivals list
+    airportMap["Gate B2"][1].push_back("BB102"); // [1] = departures list
+    airportMap["Gate B2"][2].push_back("BB103"); // [2] = delays list
+
+    /*
     // Open an external file to read initial flight data and populate the map
         // If file doesn't open, print error and exit
     ifstream fin;
@@ -65,11 +70,14 @@ int main() {
     }
     // Close the file
     fin.close();
+    */
 
     // Display the initial state of all gates and flights
     cout << "=== INITIAL AIRPORT STATUS ===" << endl;
     for (auto &gatePair : airportMap) {
         cout << gatePair.first << ": ";
+
+        cout <<
         for (auto &flight : gatePair.second[0])
             cout << flight << " ";
         cout << endl;
