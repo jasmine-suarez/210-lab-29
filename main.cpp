@@ -2,7 +2,7 @@
 // IDE used: VS Code
 
 #include <iostream>
-// #include <fstream>
+#include <fstream>
 #include <map>
 #include <array>
 #include <list>
@@ -40,6 +40,18 @@ int main() {
 
     // Open an external file to read initial flight data and populate the map
         // If file doesn't open, print error and exit
+    ifstream fin;
+    fin.open("flights.txt");
+    if (!fin.good()) {
+        cout << "Error! File not found. Exiting program...\n";
+        return 0;
+    }
+
+    string gate, flight, status;
+    while (fin >> gate >> flight >> status) {
+        // separates flight between arrival, departure, or delays
+    }
+    fin.close();
 
     // Read data from file and populate map
         // For each line, extract gate, flight number, and status
