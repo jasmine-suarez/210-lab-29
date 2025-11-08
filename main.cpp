@@ -47,17 +47,22 @@ int main() {
         return 0;
     }
 
-    string gate, flight, status;
-    while (fin >> gate >> flight >> status) {
-        // separates flight between arrival, departure, or delays
-    }
-    fin.close();
-
     // Read data from file and populate map
         // For each line, extract gate, flight number, and status
         // Insert flight into list in the array for that gate
+    string gate, flight, status;
+    while (fin >> gate >> flight >> status) {
+        auto &lists = airportMap[gate];
 
+        if (status == "arrival")
+            lists[0].push_back(flight);
+        else if (status == "departure")
+            lists[1].push_back(flight);
+        else if (status == "delay")
+            lists[2].push_back(flight);
+    }
     // Close the file
+    fin.close();
 
     // Display the initial state of all gates and flights
     cout << "=== INITIAL AIRPORT STATUS ===" << endl;
