@@ -14,4 +14,4 @@ and flight status (arrival, departure, delay).
 Simulated Events:
 The simulation will focus on three events: flights arrive (new flights are added to the "arrivals"
 list), flights depart (flights move from "arrivals" to "departures"), and flight delay (adding
-or removing from "delays"),
+or removing from "delays").
