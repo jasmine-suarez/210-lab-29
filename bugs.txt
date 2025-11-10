@@ -1,1 +1,11 @@
-1.
+1. Bug: Flights never became delayed because the event was never implemented.
+   Correction: 
+
+2. Bug: Delayed flights were never cleared for departure because the event was
+       ever implemented.
+   Correction: 
+
+3. Bug: Departures never leaving airport.
+   Correction: 
+
+4. 
