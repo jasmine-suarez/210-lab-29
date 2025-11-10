@@ -9,7 +9,12 @@
 3. Bug: Departures never leaving airport.
    Correction: Added an event to have a 25% chance a departing flight leaves.
 
-4. Bug: All of the data from flights.txt were loaded in the start of the program.
-   Connection: 
+4. Bug: All of the data from flights.txt were loaded in the start of the program,
+        also causing no later arrivals after the first time period.
+   Correction: 
 
-5. Bug: Within a 
+5. Bug: Within one time period, a flight can be delayed and cleared for departure.
+   Correction: Changed the order of events in the function.
+
+6. Bug: 
+   Correction: 
