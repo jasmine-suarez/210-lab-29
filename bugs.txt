@@ -1,5 +1,5 @@
 1. Bug: Flights never became delayed because the event was never implemented.
-   Correction: 
+   Correction: Added an event to have a 25% a departure will be delayed.
 
 2. Bug: Delayed flights were never cleared for departure because the event was
        ever implemented.
@@ -8,4 +8,4 @@
 3. Bug: Departures never leaving airport.
    Correction: 
 
-4. 
+4. Bug: 
