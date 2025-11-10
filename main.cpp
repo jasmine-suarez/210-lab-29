@@ -20,17 +20,6 @@ int main() {
     // for arrivals, departures, and delays
     map<string, array<list<string>, 3>> airportMap;
 
-    /*
-    // TEST, DUMMY GATE AND FLIGHT
-    airportMap["Gate A1"][0].push_back("AA123"); // [0] = arrivals list
-    airportMap["Gate A1"][1].push_back("AA124"); // [1] = departures list
-    airportMap["Gate A1"][2].push_back("AA125"); // [2] = delays list
-
-    airportMap["Gate B2"][0].push_back("BB101"); // [0] = arrivals list
-    airportMap["Gate B2"][1].push_back("BB102"); // [1] = departures list
-    airportMap["Gate B2"][2].push_back("BB103"); // [2] = delays list
-    */
-
     // Open an external file to read initial flight data and populate the map
         // If file doesn't open, print error and exit
     ifstream fin;
@@ -78,13 +67,6 @@ int main() {
 
     // Begin a time-based simulation for flight changes
         // For 25 time intervals
-            // Iterate through each gate in the map
-                // For each gate, simulate flight events
-                    // Randomly decide which flights move between arrivals, departures, and delays
-                        // If a flight departs, remove from arrivals
-                        // If a flight is delayed, move from departures to delayed
-                        // If a delayed flight departs, remove from delayed and add to departures
-                    // Print the changes for this interval
     for (int hour = 1; hour <= 25; hour++)
         simulate_time_period(airportMap, hour);
         
@@ -128,9 +110,36 @@ void simulate_time_period(map<string, array<list<string>, 3>> &airportMap, int h
             cout << "Flight " << flight << " moved from arrivals to departures at " << gateName << endl;
         }
 
-        // 25% CHANCE THAT A DEPARTURE WILL BE DELAYED
-        if (!flightLists[])
-
         // 50% CHANCE THAT A DELAYED FLIGHT WILL BE CLEARED FOR DEPARTURE
+        if (!flightLists[2].empty()) {
+            int random = rand() % 100;
+            if (random < 50) { // 50% chance
+                string flight = flightLists[2].front();
+                flightLists[2].pop_front();
+                flightLists[1].push_back(flight);
+                cout << "Flight " << flight << " is cleared for departure at " << gateName << endl;
+            }
+        }
+
+        // 25% CHANCE THAT A DEPARTURE WILL BE DELAYED
+        if (!flightLists[1].empty()) {
+            int random = rand() % 100;
+            if (random < 25) { // 25% chance
+                string flight = flightLists[1].front();
+                flightLists[1].pop_front();
+                flightLists[2].push_back(flight);
+                cout << "Flight " << flight << " delayed at " << gateName << endl;
+            }
+        }
+
+        // 25% CHANCE THAT A DEPARTING FLIGHT LEAVES
+        if (!flightLists[1].empty()) {
+            int random = rand() % 100;
+            if (random < 25) {
+                string flight = flightLists[1].front();
+                flightLists[1].pop_front();
+                cout << "Flight " << flight << " is now departing from " << gateName << endl;
+            }
+        }
     }
 }
