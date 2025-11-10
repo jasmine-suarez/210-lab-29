@@ -12,4 +12,4 @@
 4. Bug: All of the data from flights.txt were loaded in the start of the program.
    Connection: 
 
-5. Bug: 
+5. Bug: Within a 

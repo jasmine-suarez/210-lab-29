@@ -67,13 +67,6 @@ int main() {
 
     // Begin a time-based simulation for flight changes
         // For 25 time intervals
-            // Iterate through each gate in the map
-                // For each gate, simulate flight events
-                    // Randomly decide which flights move between arrivals, departures, and delays
-                        // If a flight departs, remove from arrivals
-                        // If a flight is delayed, move from departures to delayed
-                        // If a delayed flight departs, remove from delayed and add to departures
-                    // Print the changes for this interval
     for (int hour = 1; hour <= 25; hour++)
         simulate_time_period(airportMap, hour);
         
