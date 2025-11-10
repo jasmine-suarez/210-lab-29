@@ -3,9 +3,13 @@
 
 2. Bug: Delayed flights were never cleared for departure because the event was
        ever implemented.
-   Correction: 
+   Correction: Added an event to have a 50% chance a delayed flight will be
+               cleared for departure.
 
 3. Bug: Departures never leaving airport.
-   Correction: 
+   Correction: Added an event to have a 25% chance a departing flight leaves.
 
-4. Bug: 
+4. Bug: All of the data from flights.txt were loaded in the start of the program.
+   Connection: 
+
+5. Bug: 

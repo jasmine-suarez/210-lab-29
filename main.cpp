@@ -139,10 +139,10 @@ void simulate_time_period(map<string, array<list<string>, 3>> &airportMap, int h
             }
         }
 
-        // 40% CHANCE THAT A DEPARTING FLIGHT LEAVES
+        // 25% CHANCE THAT A DEPARTING FLIGHT LEAVES
         if (!flightLists[1].empty()) {
             int random = rand() % 100;
-            if (random < 40) {
+            if (random < 25) {
                 string flight = flightLists[1].front();
                 flightLists[1].pop_front();
                 cout << "Flight " << flight << " is now departing from " << gateName << endl;
