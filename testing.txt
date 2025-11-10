@@ -9,3 +9,33 @@ will test: for each gate in the map, the function checks the list of arrivals (0
 there is an arrival flight, the functions moves the front arrival flight to the list 
 of departures (1), flights in the departure list is removed (left airport), delayed
 flights move back to departures, and new flights arriving.
+
+    airportMap["Gate A1"][0].push_back("AA123"); // [0] = arrivals list
+    airportMap["Gate A1"][1].push_back("AA124"); // [1] = departures list
+    airportMap["Gate A1"][2].push_back("AA125"); // [2] = delays list
+
+    airportMap["Gate B2"][0].push_back("BB101"); // [0] = arrivals list
+    airportMap["Gate B2"][1].push_back("BB102"); // [1] = departures list
+    airportMap["Gate B2"][2].push_back("BB103"); // [2] = delays list
+
+void simulate_time_period(map<string, array<list<string>, 3>> &airportMap, int hour) {
+    cout << "\n --- HOUR " << hour << " ---" << endl;
+
+    // iterate through gates
+    for (auto &gatePair : airportMap) {
+        string gateName = gatePair.first;
+        auto &flightLists = gatePair.second;
+
+        // TEST, CHANGE ARRIVING FLIGHT TO DEPARTING
+        if (!flightLists[0].empty()) {
+            string flight = flightLists[0].front();
+            flightLists[0].pop_front();         // remove from arrivals
+            flightLists[1].push_back(flight);   // add to departures
+            cout << "Flight " << flight << " moved from arrivals to departures at " << gateName << endl;
+        }
+
+        // 25% CHANCE THAT A DEPARTURE WILL BE DELAYED
+
+        // 50% CHANCE THAT A DELAYED FLIGHT WILL BE CLEARED FOR DEPARTURE
+    }
+}

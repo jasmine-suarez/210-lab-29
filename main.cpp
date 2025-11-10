@@ -129,7 +129,6 @@ void simulate_time_period(map<string, array<list<string>, 3>> &airportMap, int h
         }
 
         // 25% CHANCE THAT A DEPARTURE WILL BE DELAYED
-        if (!flightLists[])
 
         // 50% CHANCE THAT A DELAYED FLIGHT WILL BE CLEARED FOR DEPARTURE
     }
